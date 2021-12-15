@@ -8,7 +8,7 @@
 		if ($('#contactForm').length > 0 ) {
 			$( "#contactForm" ).validate( {
 				rules: {
-					name: "required",
+					nombre: "required",
 					edad: "required",
 					email: {
 						required: true,
@@ -21,7 +21,7 @@
 					politica: "required"
 				},
 				messages: {
-					name: "Por favor ingresa tu nombre.",
+					nombre: "Por favor ingresa tu nombre.",
 					edad: "Edad no valida.",
 					email: "Dirección de correo electrónico no valido.",
 					genero: "Por favor elige una opción.",
@@ -35,14 +35,16 @@
 
 					$.ajax({   	
 				      type: "POST",
-				      url: "php/sendEmail.php",
+				      url: "http://localhost:3000/api/v1/visitors",
 				      data: $(form).serialize(),
 
 				      beforeSend: function() { 
 				      	$submit.css('display', 'block').text(waitText);
 				      },
 				      success: function(msg) {
+						  console.log('response', msg)
 		               if (msg == 'OK') {
+						chilliController.logon("invitado", "12345");
 		               	$('#form-message-warning').hide();
 				            setTimeout(function(){
 		               		$('#contactForm').fadeIn();
