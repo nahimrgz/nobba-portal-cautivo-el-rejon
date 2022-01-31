@@ -39,12 +39,12 @@
 									</div>
 									<form method="POST" id="contactForm" name="contactForm">
 										<div class="row">
-											<div class="col-md-12">
+											<!-- <div class="col-md-12">
 												<div class="form-group">
 													<input required type="text" class="form-control" name="nombre"
 														id="nombre" placeholder="Nombre">
 												</div>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<div class="form-group">
 													<input required type="email" class="form-control" name="email"
@@ -57,6 +57,23 @@
 														id="edad" min="5" max="99" placeholder="Edad">
 												</div>
 											</div> -->
+											<div class="col-md-12">
+												<p style="font-weight: 1000;">¿De dónde nos visitas?:</p>
+												<div class="row">
+													<div class="col-6">
+														<input type="radio" class="" name="procedencia" id="edad0" value="0">
+														<label for="edad0">Zona norte </label>
+													</div>
+													<div class="col-6">
+														<input type="radio" class="" name="procedencia" id="edad0" value="1">
+														<label for="edad0">Zona centro</label>
+													</div>
+													<div class="col-6">
+														<input type="radio" class="" name="procedencia" id="edad0" value="2">
+														<label for="edad0">Zona sur </label>
+													</div>
+												</div>
+											</div>
 											<div class="col-md-12">
 												<p style="font-weight: 1000;">Edad:</p>
 												<div class="row">
@@ -85,22 +102,23 @@
 														<label for="edad0">Más de 55 </label>
 													</div>
 												</div>
-
-
 											</div>
 											<div class="mt-2 col-md-12">
 												<p style="font-weight: 1000;">Género:</p>
 												<div class="row">
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero0" value="0">
+														<input type="radio" class="" name="genero" id="genero0"
+															value="0">
 														<label for="edad0">Femenino</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero1" value="1">
+														<input type="radio" class="" name="genero" id="genero1"
+															value="1">
 														<label for="edad0">Masculino </label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero2" value="2">
+														<input type="radio" class="" name="genero" id="genero2"
+															value="2">
 														<label for="edad0">Otro</label>
 													</div>
 												</div>
