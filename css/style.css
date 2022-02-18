@@ -319,7 +319,8 @@ h4, .h4 {
   font-size: 1.5rem; }
 
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+text-align: center; }
 
 h6, .h6 {
   font-size: 1rem; }
@@ -8162,7 +8163,10 @@ h1, h2, h3, h4, h5,
   background: #1089ff !important; }
 
 .ftco-section {
-  padding: 8em 0; }
+  /* padding: 8em 0; */
+  background-image: url(./../images/bg_1.png);
+  height: 100vh;
+}
 
 .ftco-no-pt {
   padding-top: 0; }

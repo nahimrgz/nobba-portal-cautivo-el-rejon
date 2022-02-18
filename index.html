@@ -6,24 +6,30 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 	<link rel="stylesheet" href="css/style.css">
 
-	<script src="js/ChilliLibrary.js"> </script>
-
-	<script src="js/portal_sample.js"> </script>
+	<script type="text/javascript">
+		var DEBUG = false;
+		if (!DEBUG) {
+			if (!window.console) window.console = {};
+			var methods = ["log", "debug", "warn", "info", "error"];
+			for (var i = 0; i < methods.length; i++) {
+				console[methods[i]] = function () { };
+			}
+		}
+	</script>
 
 </head>
 
 <body>
-	<section class="ftco-section img bg-hero" style="background-image: url(images/bg_1.png);">
+	<section class="ftco-section img bg-hero">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Bienvendido a la red WiFi del Parque Metropolitano El Rejón</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -32,7 +38,7 @@
 						<div class="row no-gutters justify-content-center">
 							<div class="col-lg-5">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Ingresar</h3>
+									<h5 class="mb-4">Bienvendido a la red WiFi del Parque Metropolitano El Rejón</h5>
 									<div id="form-message-warning" class="mb-4"></div>
 									<div id="form-message-success" class="mb-4">
 										¡Datos enviados correctamente!
@@ -60,20 +66,28 @@
 											<div class="col-md-12">
 												<p style="font-weight: 1000;">¿De dónde nos visitas?:</p>
 												<div class="row">
+
 													<div class="col-6">
-														<input type="radio" class="" name="procedencia"
-															id="procedencia0" value="1">
-														<label for="edad0">Zona norte </label>
+
+														<label for="procedencia0">
+															<input type="radio" class="" name="procedencia"
+																id="procedencia0" value="1">
+															Zona norte
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="procedencia"
-															id="procedencia1" value="2">
-														<label for="edad0">Zona centro</label>
+														<label for="procedencia1">
+															<input type="radio" class="" name="procedencia"
+																id="procedencia1" value="2">
+															Zona centro
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="procedencia"
-															id="procedencia2" value="3">
-														<label for="edad0">Zona sur </label>
+														<label for="procedencia2">
+															<input type="radio" class="" name="procedencia"
+																id="procedencia2" value="3">
+															Zona sur
+														</label>
 													</div>
 												</div>
 											</div>
@@ -81,28 +95,45 @@
 												<p style="font-weight: 1000;">Edad:</p>
 												<div class="row">
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad0" value="1">
-														<label for="edad0">Menor de 18 </label>
+														<label for="edad0">
+															<input type="radio" class="" name="edad" id="edad0"
+																value="1">
+															Menor de 18
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad1" value="2">
-														<label for="edad0">De 18 a 24 </label>
+														<label for="edad1">
+															<input type="radio" class="" name="edad" id="edad1"
+																value="2">
+															De 18 a 24 </label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad2" value="3">
-														<label for="edad0">De 25 a 34 </label>
+														<label for="edad2">
+															<input type="radio" class="" name="edad" id="edad2"
+																value="3">
+															De 25 a 34
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad3" value="4">
-														<label for="edad0">De 35 a 44 </label>
+														<label for="edad3">
+															<input type="radio" class="" name="edad" id="edad3"
+																value="4">
+															De 35 a 44
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad4" value="5">
-														<label for="edad0">De 45 a 54 </label>
+														<label for="edad4">
+															<input type="radio" class="" name="edad" id="edad4"
+																value="5">
+															De 45 a 54
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="edad" id="edad5" value="6">
-														<label for="edad0">Más de 55 </label>
+														<label for="edad5">
+															<input type="radio" class="" name="edad" id="edad5"
+																value="6">
+															Más de 55
+														</label>
 													</div>
 												</div>
 											</div>
@@ -110,19 +141,25 @@
 												<p style="font-weight: 1000;">Género:</p>
 												<div class="row">
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero0"
-															value="1">
-														<label for="edad0">Femenino</label>
+														<label for="genero0">
+															<input type="radio" class="" name="genero" id="genero0"
+																value="1">
+															Femenino
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero1"
-															value="2">
-														<label for="edad0">Masculino </label>
+
+														<label for="genero1">
+															<input type="radio" class="" name="genero" id="genero1"
+																value="2">
+															Masculino
+														</label>
 													</div>
 													<div class="col-6">
-														<input type="radio" class="" name="genero" id="genero2"
-															value="3">
-														<label for="edad0">Otro</label>
+														<label for="genero2">
+															<input type="radio" class="" name="genero" id="genero2"
+																value="3">
+															Otro</label>
 													</div>
 												</div>
 												<!-- <div class="form-group">
@@ -175,11 +212,14 @@
 		</div>
 	</section>
 
+	<script src="js/ChilliLibrary.js"> </script>
+	<script src="js/portal_sample.js"> </script>
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/main-sdfsa.js"></script>
 
 </body>
 

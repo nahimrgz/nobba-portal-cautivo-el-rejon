@@ -10,6 +10,7 @@
 				rules: {
 					nombre: "required",
 					edad: "required",
+					procedencia: "required",
 					email: {
 						required: true,
 						email: true
@@ -25,7 +26,8 @@
 					edad: "Edad no valida.",
 					email: "Dirección de correo electrónico no valido.",
 					genero: "Por favor elige una opción.",
-					politica: "Por favor acepta la política de privacidad."
+					politica: "Por favor acepta la política de privacidad.",
+					procedencia: "Procedencia no valida"
 				},
 				/* submit via ajax */
 
@@ -35,7 +37,7 @@
 
 					$.ajax({
 						type: "POST",
-						url: "http://localhost:3000/api/v1/visitors",
+						url: "http://nobba.com.mx:3000/api/v1/visitors",
 						data: $(form).serialize(),
 
 						beforeSend: function () {
@@ -44,7 +46,6 @@
 						success: function (msg) {
 							console.log('response', msg)
 							if (msg == 'OK') {
-								chilliController.logon("invitado", "12345");
 								$('#form-message-warning').hide();
 								setTimeout(function () {
 									$('#contactForm').fadeIn();
@@ -52,20 +53,22 @@
 								setTimeout(function () {
 									$('#form-message-success').fadeIn();
 								}, 1400);
-
+								
 								setTimeout(function () {
 									$('#form-message-success').fadeOut();
 								}, 8000);
-
+								
 								setTimeout(function () {
 									$submit.css('display', 'none').text(waitText);
 								}, 1400);
-
+								
 								setTimeout(function () {
 									$('#contactForm').each(function () {
 										this.reset();
 									});
 								}, 1400);
+								chilliController.logon("invitado", "12345");
+								window.location.href = 'https://parquemetropolitanotrespresas.com/';
 
 							} else {
 								$('#form-message-warning').html(msg);
