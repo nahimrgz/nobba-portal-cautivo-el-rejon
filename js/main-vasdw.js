@@ -11,13 +11,10 @@
 					nombre: "required",
 					edad: "required",
 					procedencia: "required",
+					genero: "required",
 					email: {
 						required: true,
 						email: true
-					},
-					otro_genero: {
-						required: true,
-						minlength: 5
 					},
 					politica: "required"
 				},
@@ -32,16 +29,17 @@
 				/* submit via ajax */
 
 				submitHandler: function (form) {
-					var $submit = $('.submitting'),
-						waitText = 'Guardando información...';
+					var $submit = $('#btnEnviar'),
+						waitText = 'Enviando información';
 
 					$.ajax({
 						type: "POST",
-						url: "http://nobba.com.mx:3000/api/v1/visitors",
+						url: "https://api.nobba.com.mx/api/v1/visitors",
 						data: $(form).serialize(),
 
 						beforeSend: function () {
-							$submit.css('display', 'block').text(waitText);
+							$submit.prop('value', waitText);
+							$submit.prop('disabled', true);
 						},
 						success: function (msg) {
 							console.log('response', msg)
@@ -53,15 +51,15 @@
 								setTimeout(function () {
 									$('#form-message-success').fadeIn();
 								}, 1400);
-								
+
 								setTimeout(function () {
 									$('#form-message-success').fadeOut();
 								}, 8000);
-								
+
 								setTimeout(function () {
 									$submit.css('display', 'none').text(waitText);
 								}, 1400);
-								
+
 								setTimeout(function () {
 									$('#contactForm').each(function () {
 										this.reset();
@@ -73,13 +71,15 @@
 							} else {
 								$('#form-message-warning').html(msg);
 								$('#form-message-warning').fadeIn();
-								$submit.css('display', 'none');
+								$submit.prop('value', 'Enviar');
+								$submit.prop('disabled', false);
 							}
 						},
 						error: function () {
 							$('#form-message-warning').html("¡Algo salió mal!, por favor intentalo de nuevo más tarde.");
 							$('#form-message-warning').fadeIn();
-							$submit.css('display', 'none');
+							$submit.prop('value', 'Enviar');
+							$submit.prop('disabled', false);
 						}
 					});
 				} // end submitHandler

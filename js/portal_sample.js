@@ -10,7 +10,7 @@
     chilliController.port = getURLParameter('uamport');
 	chilliController.uamService = getURLParameter('uamservice');
     //UAM secret between portal server and controller
-    chilliController.uamSecret = "";
+    chilliController.uamSecret = "vhsFKxXW68Me7CZ";
     //Poll the gateway every interval, in seconds
     chilliController.interval = 30;
 	//Assign portal page UI updating function
